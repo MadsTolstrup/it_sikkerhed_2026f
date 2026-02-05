@@ -1,11 +1,11 @@
 # it_sikkerhed_2026f
 intro til softwaresikkerhed
-onrling syg readme.. så read mig da for faen mand yeah totalt!
-dette er et skoleprojekt til zealand køge... eller Næstved... fuck knows, zealand prolly dont even..
+onrling syg readme.
+dette er et skoleprojekt til zealand Næstved...
 ----------------------------------------------------------------------------------------------------------------------
 # Opgave: Teststrategier & Security Gates
 
-Herunder er besvarelsen af testopgaverne, opdelt i en "stabel" (Test Pyramide-struktur) ved brug af HTML5-elementer og Markdown-tabeller.
+Herunder er besvarelsen af testopgaverne - Test teknikker 5/2-26.
 
 ## 🏗️ Test & Security Stack
 
