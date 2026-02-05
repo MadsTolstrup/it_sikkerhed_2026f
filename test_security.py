@@ -1,28 +1,28 @@
 import pytest
 
-# En simpel funktion der simulerer login-logik
-def validate_login(username_ok, password_ok, mfa_ok):
+# Funktionen der skal testes (vores simple sikkerheds-logik)
+def validate_login_attempt(username_ok, password_ok, mfa_ok):
     if username_ok and password_ok and mfa_ok:
         return "Access Granted"
     else:
         return "Access Denied"
 
-# DATA-DREVEN TEST (Decision Table + Boundary Test)
+# DATA-DREVEN TEST (Decision Table logik)
 @pytest.mark.parametrize("user, pwd, mfa, expected", [
-    (True,  True,  True,  "Access Granted"), # R2 i diasshow
-    (True,  True,  False, "Access Denied"),  # R3 i diasshow
-    (False, True,  True,  "Access Denied"),  # Forkert bruger
-    (True,  False, True,  "Access Denied"),  # Forkert password
+    (True,  True,  True,  "Access Granted"), # Alt er korrekt
+    (True,  True,  False, "Access Denied"),  # Forkert MFA
+    (False, True,  True,  "Access Denied"),  # Forkert brugernavn
+    (True,  False, True,  "Access Denied"),  # Forkert adgangskode
 ])
-def test_login_decision_table(user, pwd, mfa, expected):
-    assert validate_login(user, pwd, mfa) == expected
+def test_login_logic(user, pwd, mfa, expected):
+    assert validate_login_attempt(user, pwd, mfa) == expected
 
-# En hurtig Boundary Test for password længde (min 8 tegn)
-@pytest.mark.parametrize("password, expected", [
-    ("1234567", False), # Lige under (7)
-    ("12345678", True), # Lige på (8)
-    ("123456789", True) # Lige over (9)
+# GRÆNSEVÆRDITEST (Password længde: min 8 tegn)
+@pytest.mark.parametrize("password, expected_valid", [
+    ("1234567", False), # Lige under grænsen (7 tegn)
+    ("12345678", True), # Lige på grænsen (8 tegn)
+    ("123456789", True) # Lige over grænsen (9 tegn)
 ])
-def test_password_boundary(password, expected):
+def test_password_boundaries(password, expected_valid):
     is_valid = len(password) >= 8
-    assert is_valid == expected
+    assert is_valid == expected_valid
