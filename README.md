@@ -46,4 +46,4 @@ Denne README indeholder løsningen på dagens opgaver i softwaresikkerhed. Besva
 ---
 
 ## 💻 Programmering: Data-dreven Unit Test (PyTest)
-I overensstemmelse med opgaven "Leg" er der oprettet en data-dreven test i filen `test_security.py`. Testen bruger `@pytest.mark.parametrize` til at dække både logikken fra en Decision Table og Grænseværditests i én læsbar testfil.
+I overensstemmelse med opgaven "Leg" er der oprettet en data-dreven test i filen [test_security.py](https://github.com/MadsTolstrup/it_sikkerhed_2026f/blob/main/test_security.py). Testen bruger `@pytest.mark.parametrize` til at dække både logikken fra en Decision Table og Grænseværditests i én læsbar testfil.
