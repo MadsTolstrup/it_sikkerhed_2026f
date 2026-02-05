@@ -42,4 +42,4 @@ Herunder er besvarelsen af testopgaverne - Test teknikker 5/2-26.
 ---
 
 ## 💻 Data-dreven Unit Test (PyTest)
-Jeg har implementeret en data-dreven test i filen `test_security.py`, som kombinerer Decision Table-logik med Boundary Value-tests. Dette sikrer en hurtig og læsbar verificering af sikkerhedslogikken i bunden af pyramiden.
+Jeg har implementeret en data-dreven test i filen `[test_security.py](https://github.com/MadsTolstrup/it_sikkerhed_2026f/blob/main/test_security.py)`, som kombinerer Decision Table-logik med Boundary Value-tests. Dette sikrer en hurtig og læsbar verificering af sikkerhedslogikken i bunden af pyramiden.
