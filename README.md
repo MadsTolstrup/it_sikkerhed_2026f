@@ -61,11 +61,6 @@ Spørgsmål:
 
 1. Hvorfor er det smart at bruge en Flat-file?
 
-Enkelhed: Det er en simpel datafil, hvor al information gemmes i ét enkelt lag.
+Hvorfor er det smart at bruge en flat-file database? En flat-file database er en simpel datafil (her JSON), hvor al information gemmes i ét lag. Det er smart til mindre applikationer, fordi man ikke skal opsætte en kompliceret database-server, og databasen kan gemmes direkte i projektets repository. Det gør systemet hurtigt at sætte op og nemt at flytte.
 
-
-Portabilitet: Den er perfekt til simple applikationer, hvor hele din "database" kan gemmes i det samme repository (mappe) som din kode.
-
-
-Ingen overhead: Du behøver ikke at installere eller konfigurere store database-systemer (som MySQL eller MongoDB) for at komme i gang.
-
+Test NavnGiven (Givet)When (Når)Then (Så)Risiko (hvis testen fejler)test_create_userEn tom database og brugerdata (Anna Jensen).Funktionen create_user kaldes.Antallet af brugere stiger til 1, og data gemmes i JSON-filen.Kritisk: Nye brugere kan ikke oprette sig i systemet.test_get_user_by_idEn database med en bruger (ID 0).Funktionen get_user_by_id(0) kaldes.Systemet returnerer den korrekte bruger (Anna).Høj: Brugere kan ikke tilgå deres egne data.test_update_passwordEn eksisterende bruger.Funktionen update_password kaldes med nyt input.Brugerens password i databasen bliver ændret korrekt.Middel: Sikkerhedsfunktioner som password-skift virker ikke.
