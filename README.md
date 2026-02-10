@@ -51,7 +51,7 @@ I overensstemmelse med opgaven "Leg" er der oprettet en data-dreven test i filen
 
 ----------------------------------------------------------------------------------------------------------------------
 
-##Test of kryptering.
+### Test of kryptering.
 
 10/02-26
 
@@ -77,23 +77,56 @@ Herunder ses screenshot af terminalen, der bekræfter, at funktionerne i Data_ha
 
 --------------------------------------------------------------------------------------------------------------------
 
-##Opgave - Kryptering & Hashing
+### Opgave - Kryptering & Hashing
 -----
 
 
-Opgave - Kryptering & Hashing
+# 🔐 IT-Sikkerhed: Flat-file Database & Kryptering
+**Dato:** 10/02-2026
 
-# Opgave – Kryptering + Hashing
+## 📂 Opgave - Flat-file Database
 
-### Valg af algoritmer
-* **Hashing:** Jeg har valgt **SHA-256** til passwords. Det er en "one-way" algoritme, hvilket betyder, at passwords aldrig kan dekrypteres tilbage til klartekst, hvilket sikrer brugeren mod datalæk.
-* **Kryptering:** Jeg har valgt **AES-128** til persondata (navne og adresser). Ud fra mit benchmark i `test_1_encryption_benchmark.py` kunne jeg se, at AES-128 er hurtigere end AES-256, samtidig med at den leverer stærk sikkerhed til GDPR-data.
+### ❓ Hvorfor er det smart at bruge en Flat-file?
+En flat-file database (her i JSON-format) er en simpel datafil, hvor al information gemmes i ét lag. Det er smart til mindre applikationer, fordi man ikke behøver at opsætte eller vedligeholde en kompliceret database-server. Databasen gemmes direkte i projektets repository, hvilket gør systemet hurtigt at sætte op og nemt at flytte.
 
-### Hvornår og hvorfor?
-* **Hvornår skal data krypteres?** Data skal krypteres lige **inden** de skrives til JSON-filen. Dette kaldes "Encryption at Rest" og sikrer, at data er ulæselige, hvis filen bliver stjålet.
-* **Hvornår skal data dekrypteres?** Data dekrypteres kun i computerens hukommelse (RAM), når de skal læses af applikationen (f.eks. ved login eller visning af profil).
-* **Hvornår skal data fjernes fra hukommelsen?** Dekrypteret data skal fjernes fra RAM **straks efter brug**. Det gør vi for at undgå "Memory Dumps", hvor en hacker kan udlæse følsom information direkte fra maskinens arbejdshukommelse.
+### 📊 Test Design & Risikovurdering
+Herunder er de implementerede unit tests beskrevet med **Given/When/Then** metoden.
 
-### Andre hensyn
-Man bør overveje **Saltning** af passwords sammen med hashing for at beskytte mod "Rainbow Tables" (lister over forudberegnede hashes).
+| Test Navn | Given (Givet) | When (Når) | Then (Så) | Risiko (hvis testen fejler) |
+| :--- | :--- | :--- | :--- | :--- |
+| **test_create_and_find_user** | En tom database og gyldige brugerdata. | Funktionen `create_user` kaldes. | Antallet af brugere stiger til 1, og data kan hentes korrekt via ID. | **Kritisk:** Nye brugere kan ikke oprettes, hvilket fører til datatab. |
+| **test_user_status_toggle** | En database med en aktiv bruger (`enabled: True`). | Funktionen `disable_user` kaldes på brugerens ID. | Brugerens status i JSON-filen ændres til `False`. | **Høj:** Man kan ikke spærre adgang for brugere, hvilket er et sikkerhedsbrud. |
+
+---
+
+## 🔒 Opgave – Kryptering + Hashing
+
+### 🛠️ Valg af algoritmer (Baseret på benchmark)
+Jeg har kørt `test_1_encryption_benchmark.py` for at sammenligne ydeevnen på forskellige algoritmer. Resultaterne var tydelige:
+
+* **Hashing:** Jeg har valgt **SHA-256** til passwords. I min test brugte den kun **0.004083 ms**. Det er en "one-way" algoritme, hvilket betyder, at passwords aldrig kan dekrypteres tilbage til klartekst.
+* **Kryptering:** Jeg har valgt **AES-128** til persondata. Min test viste, at AES-128 leverede kryptering på **0.056 ms**. Jeg har fravalgt RSA, da den var ekstremt langsom (**~65-69 ms**).
+
+### 🛡️ Sikkerhedsprocedurer (GDPR & Sikkerhed)
+For at opfylde GDPR-kravene følger systemet disse principper:
+
+* **Hvornår krypteres data?**
+    Data krypteres lige **inden** de skrives til JSON-filen. Dette sikrer **"Encryption at Rest"**, så oplysningerne er ulæselige på disken.
+* **Hvornår dekrypteres data?**
+    Dekryptering sker kun i computerens **hukommelse (RAM)**, når applikationen skal bruge oplysningerne til læsning.
+* **Hvornår fjernes data fra hukommelsen?**
+    Dekrypteret data fjernes fra RAM **straks efter brug**. Dette gøres for at undgå **"Memory Dumps"**, hvor en hacker kan udlæse følsom info direkte fra RAM.
+
+---
+
+### 📸 Dokumentation (Screenshots)
+
+**PyTest Resultater:**
+![Screenshot af 2 passed tests](INDSÆT_LINK_HER)
+
+**Krypteret JSON Database:**
+![Screenshot af krypteret JSON fil](INDSÆT_LINK_HER)
+
+<img width="1744" height="1007" alt="image" src="https://github.com/user-attachments/assets/77afd444-11ac-4888-a42a-bd2eb0ab08fd" />
+
 
