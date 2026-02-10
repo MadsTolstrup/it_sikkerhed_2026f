@@ -79,6 +79,3 @@ Herunder ses screenshot af terminalen, der bekræfter, at funktionerne i Data_ha
 
 ##Opgave - Kryptering & Hashing
 -----
-
-Herunder ses screenshot af terminalen, der bekræfter, at funktionerne i Data_handler understøttes og virker korrekt.
-<img width="1144" height="262" alt="image" src="https://github.com/user-attachments/assets/7fd3a132-551a-4661-8a12-fb847a8ca7d9" />
