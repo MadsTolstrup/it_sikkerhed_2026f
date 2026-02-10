@@ -61,16 +61,16 @@ Spørgsmål:
 
 1. Hvorfor er det smart at bruge en Flat-file?
 
-Hvorfor er det smart at bruge en flat-file database? En flat-file database er en simpel datafil (her JSON), hvor al information gemmes i ét lag. Det er smart til mindre applikationer, fordi man ikke skal opsætte en kompliceret database-server, og databasen kan gemmes direkte i projektets repository. Det gør systemet hurtigt at sætte op og nemt at flytte.
+En flat-file database er en simpel datafil (her JSON), hvor al information gemmes i ét lag. Det er smart til mindre applikationer, fordi man ikke skal opsætte en kompliceret database-server, og databasen kan gemmes direkte i projektets repository. Det gør systemet hurtigt at sætte op og nemt at flytte (portabelt).
+
+### 📊 Test Design & Risikovurdering (Flat-file DB)
 
 | Test Navn | Given (Givet) | When (Når) | Then (Så) | Risiko (hvis testen fejler) |
 | :--- | :--- | :--- | :--- | :--- |
-| **test_create_user** | En tom database og brugerdata (Anna Jensen). | Funktionen `create_user` kaldes. | Antallet af brugere stiger til 1, og data gemmes i JSON-filen. | **Kritisk:** Nye brugere kan ikke oprette sig i systemet. |
-| **test_get_user_by_id** | En database med en bruger (ID 0). | Funktionen `get_user_by_id(0)` kaldes. | Systemet returnerer den korrekte bruger (Anna). | **Høj:** Brugere kan ikke tilgå deres egne data. |
-| **test_update_password** | En eksisterende bruger. | Funktionen `update_password` kaldes med nyt input. | Brugerens password i databasen bliver ændret korrekt. | **Middel:** Sikkerhedsfunktioner som password-skift virker ikke. |
-
+| **test_create_and_find_user_logic** | En tom database og gyldige brugerdata med alle 7 krævede felter. | Funktionen `create_user` kaldes. | Antallet af brugere stiger til 1, og data kan hentes korrekt via ID. | **Kritisk:** Systemet kan ikke gemme data, hvilket fører til permanent datatab for nye brugere. |
+| **test_user_status_toggle_logic** | En database med en aktiv bruger (`enabled: True`). | Funktionen `disable_user` kaldes på brugerens ID. | Brugerens status i JSON-filen ændres til `False`. | **Høj:** Man kan ikke spærre adgang for brugere, hvilket udgør en alvorlig sikkerhedsrisiko. |
 
 -----
 
 Herunder ses screenshot af terminalen, der bekræfter, at funktionerne i Data_handler understøttes og virker korrekt.
-<img width="1160" height="303" alt="image" src="https://github.com/user-attachments/assets/7598b450-201c-4086-9ae3-1f606e0fabd8" />
+<img width="1144" height="262" alt="image" src="https://github.com/user-attachments/assets/7fd3a132-551a-4661-8a12-fb847a8ca7d9" />
