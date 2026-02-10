@@ -69,7 +69,9 @@ En flat-file database er en simpel datafil (her JSON), hvor al information gemme
 | :--- | :--- | :--- | :--- | :--- |
 | **test_create_and_find_user_logic** | En tom database og gyldige brugerdata med alle 7 krævede felter. | Funktionen `create_user` kaldes. | Antallet af brugere stiger til 1, og data kan hentes korrekt via ID. | **Kritisk:** Systemet kan ikke gemme data, hvilket fører til permanent datatab for nye brugere. |
 | **test_user_status_toggle_logic** | En database med en aktiv bruger (`enabled: True`). | Funktionen `disable_user` kaldes på brugerens ID. | Brugerens status i JSON-filen ændres til `False`. | **Høj:** Man kan ikke spærre adgang for brugere, hvilket udgør en alvorlig sikkerhedsrisiko. |
+--------------------------------------------------------------------------------------------------------------------
 
+##Opgave - Kryptering & Hashing
 -----
 
 Herunder ses screenshot af terminalen, der bekræfter, at funktionerne i Data_handler understøttes og virker korrekt.
