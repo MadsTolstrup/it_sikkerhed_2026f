@@ -121,11 +121,8 @@ For at opfylde GDPR-kravene følger systemet disse principper:
 
 ### 📸 Dokumentation (Screenshots)
 
-**PyTest Resultater:**
-![Screenshot af 2 passed tests](INDSÆT_LINK_HER)
+<img width="1274" height="314" alt="image" src="https://github.com/user-attachments/assets/f30f9d78-e5f3-4582-94d0-6698cf62e72d" />
 
-**Krypteret JSON Database:**
-![Screenshot af krypteret JSON fil](INDSÆT_LINK_HER)
 
 <img width="1744" height="1007" alt="image" src="https://github.com/user-attachments/assets/77afd444-11ac-4888-a42a-bd2eb0ab08fd" />
 
