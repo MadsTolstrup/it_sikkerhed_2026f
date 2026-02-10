@@ -68,3 +68,9 @@ Hvorfor er det smart at bruge en flat-file database? En flat-file database er en
 | **test_create_user** | En tom database og brugerdata (Anna Jensen). | Funktionen `create_user` kaldes. | Antallet af brugere stiger til 1, og data gemmes i JSON-filen. | **Kritisk:** Nye brugere kan ikke oprette sig i systemet. |
 | **test_get_user_by_id** | En database med en bruger (ID 0). | Funktionen `get_user_by_id(0)` kaldes. | Systemet returnerer den korrekte bruger (Anna). | **Høj:** Brugere kan ikke tilgå deres egne data. |
 | **test_update_password** | En eksisterende bruger. | Funktionen `update_password` kaldes med nyt input. | Brugerens password i databasen bliver ændret korrekt. | **Middel:** Sikkerhedsfunktioner som password-skift virker ikke. |
+
+
+-----
+
+Herunder ses screenshot af terminalen, der bekræfter, at funktionerne i Data_handler understøttes og virker korrekt.
+<img width="1160" height="303" alt="image" src="https://github.com/user-attachments/assets/7598b450-201c-4086-9ae3-1f606e0fabd8" />
