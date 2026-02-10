@@ -79,3 +79,21 @@ Herunder ses screenshot af terminalen, der bekræfter, at funktionerne i Data_ha
 
 ##Opgave - Kryptering & Hashing
 -----
+
+
+Opgave - Kryptering & Hashing
+
+# Opgave – Kryptering + Hashing
+
+### Valg af algoritmer
+* **Hashing:** Jeg har valgt **SHA-256** til passwords. Det er en "one-way" algoritme, hvilket betyder, at passwords aldrig kan dekrypteres tilbage til klartekst, hvilket sikrer brugeren mod datalæk.
+* **Kryptering:** Jeg har valgt **AES-128** til persondata (navne og adresser). Ud fra mit benchmark i `test_1_encryption_benchmark.py` kunne jeg se, at AES-128 er hurtigere end AES-256, samtidig med at den leverer stærk sikkerhed til GDPR-data.
+
+### Hvornår og hvorfor?
+* **Hvornår skal data krypteres?** Data skal krypteres lige **inden** de skrives til JSON-filen. Dette kaldes "Encryption at Rest" og sikrer, at data er ulæselige, hvis filen bliver stjålet.
+* **Hvornår skal data dekrypteres?** Data dekrypteres kun i computerens hukommelse (RAM), når de skal læses af applikationen (f.eks. ved login eller visning af profil).
+* **Hvornår skal data fjernes fra hukommelsen?** Dekrypteret data skal fjernes fra RAM **straks efter brug**. Det gør vi for at undgå "Memory Dumps", hvor en hacker kan udlæse følsom information direkte fra maskinens arbejdshukommelse.
+
+### Andre hensyn
+Man bør overveje **Saltning** af passwords sammen med hashing for at beskytte mod "Rainbow Tables" (lister over forudberegnede hashes).
+
