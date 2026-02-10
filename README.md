@@ -63,4 +63,8 @@ Spørgsmål:
 
 Hvorfor er det smart at bruge en flat-file database? En flat-file database er en simpel datafil (her JSON), hvor al information gemmes i ét lag. Det er smart til mindre applikationer, fordi man ikke skal opsætte en kompliceret database-server, og databasen kan gemmes direkte i projektets repository. Det gør systemet hurtigt at sætte op og nemt at flytte.
 
-Test NavnGiven (Givet)When (Når)Then (Så)Risiko (hvis testen fejler)test_create_userEn tom database og brugerdata (Anna Jensen).Funktionen create_user kaldes.Antallet af brugere stiger til 1, og data gemmes i JSON-filen.Kritisk: Nye brugere kan ikke oprette sig i systemet.test_get_user_by_idEn database med en bruger (ID 0).Funktionen get_user_by_id(0) kaldes.Systemet returnerer den korrekte bruger (Anna).Høj: Brugere kan ikke tilgå deres egne data.test_update_passwordEn eksisterende bruger.Funktionen update_password kaldes med nyt input.Brugerens password i databasen bliver ændret korrekt.Middel: Sikkerhedsfunktioner som password-skift virker ikke.
+| Test Navn | Given (Givet) | When (Når) | Then (Så) | Risiko (hvis testen fejler) |
+| :--- | :--- | :--- | :--- | :--- |
+| **test_create_user** | En tom database og brugerdata (Anna Jensen). | Funktionen `create_user` kaldes. | Antallet af brugere stiger til 1, og data gemmes i JSON-filen. | **Kritisk:** Nye brugere kan ikke oprette sig i systemet. |
+| **test_get_user_by_id** | En database med en bruger (ID 0). | Funktionen `get_user_by_id(0)` kaldes. | Systemet returnerer den korrekte bruger (Anna). | **Høj:** Brugere kan ikke tilgå deres egne data. |
+| **test_update_password** | En eksisterende bruger. | Funktionen `update_password` kaldes med nyt input. | Brugerens password i databasen bliver ændret korrekt. | **Middel:** Sikkerhedsfunktioner som password-skift virker ikke. |
