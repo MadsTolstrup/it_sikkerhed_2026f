@@ -48,3 +48,24 @@ Denne README indeholder løsningen på dagens opgaver i softwaresikkerhed. Besva
 ## 💻 Programmering: Data-dreven Unit Test (PyTest)
 I overensstemmelse med opgaven "Leg" er der oprettet en data-dreven test i filen [test_security.py](https://github.com/MadsTolstrup/it_sikkerhed_2026f/blob/main/test_security.py). Testen bruger `@pytest.mark.parametrize` til at dække både logikken fra en Decision Table og Grænseværditests i én læsbar testfil.
 <img width="1224" height="334" alt="image" src="https://github.com/user-attachments/assets/7cc1e505-e2cf-40f0-ad0e-4705505bc1d9" />
+
+----------------------------------------------------------------------------------------------------------------------
+
+##Test of kryptering.
+
+10/02-26
+
+#Opgave - Flat file 
+
+Spørgsmål: 
+
+1. Hvorfor er det smart at bruge en Flat-file?
+
+Enkelhed: Det er en simpel datafil, hvor al information gemmes i ét enkelt lag.
+
+
+Portabilitet: Den er perfekt til simple applikationer, hvor hele din "database" kan gemmes i det samme repository (mappe) som din kode.
+
+
+Ingen overhead: Du behøver ikke at installere eller konfigurere store database-systemer (som MySQL eller MongoDB) for at komme i gang.
+
