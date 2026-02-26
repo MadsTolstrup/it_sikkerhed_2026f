@@ -125,5 +125,48 @@ For at opfylde GDPR-kravene følger systemet disse principper:
 
 
 <img width="1744" height="1007" alt="image" src="https://github.com/user-attachments/assets/77afd444-11ac-4888-a42a-bd2eb0ab08fd" />
+------------------------------------------------
+
+# IT Sikkerhed - Opgave 1 & Opgave 2: Auth-server og REST API
+
+Dette repository indeholder min løsning til opbygning af en Auth-server og et REST API ved hjælp af FastAPI i Python. Projektet tager udgangspunkt i underviserens repo, som er blevet tilpasset og sat op lokalt.
+
+## Hvad systemet kan (Features)
+
+
+Brugerhåndtering: Man kan oprette (registrere) nye brugere via API'et.
+
+Sikker opbevaring: Systemet gemmer aldrig passwords i klartekst (de hashes), og personfølsomme data som fornavn/efternavn krypteres i den lokale db_user_flat_file.json database.
+
+
+Bearer Tokens & Roller: Via /get_bearer_token kan man logge ind og få udleveret et sikkerheds-token. Dette token bruges til at verificere brugerens identitet og roller (f.eks. "admin" eller "user"), før de får lov at udføre handlinger.
+
+
+Deaktivering: Brugere kan deaktivere konti (kræver det korrekte token og de rette rettigheder).
+
+## Miljøvariabler og Sikkerhed
+Projektet bruger en .env fil til at holde styr på hemmelige nøgler til hashing og kryptering.
+
+Bemærk: Ifølge opgavebeskrivelsen må kun test-secrets ligge i Git. Rigtige produktions-secrets (prod-secrets) holdes strengt lokalt i miljøvariabler (environment variables) og må aldrig uploades.
++1
+
+## Sådan kører du projektet lokalt
+
+Installer afhængigheder: pip install fastapi uvicorn python-dotenv cryptography pyjwt
+
+Sørg for at have en .env fil med de korrekte test-nøgler i roden af projektet.
+
+Start serveren i terminalen: py -m uvicorn main:app --reload --port 8080
+
+Gå til http://127.0.0.1:8080/docs i din browser for at se og teste via Swagger UI.
+
+## Bevis for udførelse:
+
+<img width="578" height="143" alt="image" src="https://github.com/user-attachments/assets/2a20e638-efe9-4142-8729-8907bb376a80" />
+
+<img width="1468" height="369" alt="image" src="https://github.com/user-attachments/assets/5c8efa9b-d064-4cbf-8e9f-b71651182ddd" />
+
+
+<img width="387" height="236" alt="image" src="https://github.com/user-attachments/assets/56997fd0-1420-4685-9179-a47a8f0ed08c" />
 
 
