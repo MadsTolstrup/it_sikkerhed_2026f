@@ -1,0 +1,32 @@
+{
+  "admin": {
+    "username": "admin",
+    "password": "GecnEK7VJXmcIBsSiZ1Ger7e/BzjYMKmr4hE72hSF9Ac98h9iTg2NdyG8pTlMriz",
+    "first_name": "gAAAAABpoA4h4felrMkbicIdxu2pC7tsGVZxmvXkzPXu9EYN000lmBfOV8QsBUnEjg2NvdJIhUBqSJLWFjEx3mUi2kX80fjpCbMeJre-F2CSs9TMnld-qPo=",
+    "last_name": "gAAAAABpoA4hkXmKJIWhmcfjHDiyFnvOEJY1QCbse4_MECfghqrJRNEdGrCmQqTlSiMWDdi6Hb6RTlk6I0O-UMW-xuCbcIExIA==",
+    "active": true,
+    "roles": [
+      "admin"
+    ]
+  },
+  "min_seje_bruger@test.dk": {
+    "username": "min_seje_bruger@test.dk",
+    "password": "VJuaBU1HByiwHmhslu1QgY7A3HFMVoAMgw274VNRrn0yg5XBTjiz2IGCHjXH5nQ/",
+    "first_name": "gAAAAABpoA6bLfqBsbOJgs4KJQ2lTFFAk4yEtBfD1S6SekSsjrf3-sj3m5o56ZdXAabKrcNwDNt0Pue8YKHLY8PzjDJEYrh5cQ==",
+    "last_name": "gAAAAABpoA6bkxO6nPto0MrOk-mONKXBL73nTawUjFacAjboFeZVVjIPUahpe7cCyglmrrpan2o7bj0B354O7tQvh06cFu9s5g==",
+    "active": true,
+    "roles": [
+      "user"
+    ]
+  },
+  "min_seje_bruger@test1.dk": {
+    "username": "min_seje_bruger@test1.dk",
+    "password": "2gU/tYT3KrX2g7VN1vBkpdaL2wcjK27atgFmy6FgF6f7gQmGLyRf2GfdZUo8KoSL",
+    "first_name": "gAAAAABpoBGQoJcnYuv0hDYqE9_8FMCKGQKNyUSfqKA5QcBg-zAdV6ZqcQs-jon7bD--WVmqSQ58jJNZ4qDVi-Igc9ZboZXCqw==",
+    "last_name": "gAAAAABpoBGQ9bjz81N8n8SYXtXLZF58TPmi1ebcEwU2Yi94Th0gNCQI3sEoxjnk32cWcvUl5ONBIuE57tsLSOhkgLJT-rpPkg==",
+    "active": true,
+    "roles": [
+      "user"
+    ]
+  }
+}
